@@ -1,0 +1,25 @@
+#catalogue_list {
+    padding-bottom: 200px;
+  .list_heading {
+    &::before {
+      left: calc(var(--gutter-width) / 2);
+      right: calc(var(--gutter-width) / 2);
+      top: 0;
+      height: 100%;
+      background-color: get-color(primary);
+      border-radius: 4px;
+    }
+  }
+  .list_body {
+    a {
+      &:hover {
+        span {
+          border-color: get-color(primary);
+        }
+        svg {
+          fill: get-color(primary);
+        }
+      }
+    }
+  }
+}

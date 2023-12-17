@@ -1,0 +1,6 @@
+.prod_card{
+    &:hover{
+        color: get-color(primary);
+        border-color: get-color(primary);
+    }
+}

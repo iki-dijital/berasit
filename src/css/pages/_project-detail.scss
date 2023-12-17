@@ -1,0 +1,24 @@
+@use 'sass:math';
+@function calc_column($column-width) {
+  $get-frac: math.div($number-of-col, $column-width);
+  @return calc((var(--container-width) / $get-frac) - 24px);
+}
+
+#project_detail {
+  padding-bottom: 190px;
+  .grid-sizer {
+    width: #{calc_column(4)};
+    @include max_responsive(xl) {
+      width: #{calc_column(6)};
+    }
+    @include max_responsive(xs) {
+      width: 100%;
+    }
+  }
+  .grid_item {
+    @extend .grid-sizer;
+    img {
+      @extend .grid-sizer;
+    }
+  }
+}

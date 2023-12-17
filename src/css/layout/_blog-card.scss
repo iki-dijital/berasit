@@ -1,0 +1,7 @@
+.blog_card{
+    &:hover{
+        span{
+            color: get-color(primary);
+        }
+    }
+}

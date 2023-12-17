@@ -1,0 +1,36 @@
+%btn{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 40px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1
+}
+
+.btn_gray {
+  @extend %btn;
+  padding: 8px;
+  width: 140px;
+  background-color: get-color(light);
+  color: #000;
+  font-size: 14px;
+  transition: 0.3s background-color, 0.3s color;
+  &:hover{
+    color: #fff;
+    background-color: get-color(primary);
+  }
+}
+
+
+.btn_bordered{
+  @extend %btn;
+  border: 1px solid currentColor;
+  color: get-color(dark);
+  transition: .3s color;
+  &:hover{
+    color: get-color(primary);
+  }
+}

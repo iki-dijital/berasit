@@ -1,0 +1,8 @@
+#project_listing {
+  padding-bottom: 156px;
+  a {
+    &:hover {
+      color: get-color(primary);
+    }
+  }
+}

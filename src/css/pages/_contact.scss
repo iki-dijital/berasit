@@ -1,0 +1,44 @@
+#contact-content {
+    .black_info {
+      &::after {
+        top: 0;
+        left: 100%;
+        width: var(--gutter-width);
+        height: 100%;
+        background-color: get-color(light);
+      }
+    }
+    @include max_responsive(md){
+      .black_info{
+        &::after{
+          content: unset;
+        }
+      }
+    }
+  }
+  
+  .contact_page_form {
+    %input {
+      height: 50px;
+      @include edit_placeholder {
+        color: get-color(dark);
+        opacity: 1;
+      }
+    }
+    input{
+      @extend %input;
+    }
+    textarea{
+      @extend %input;
+      height: 150px;
+      resize: none;
+    }
+    button{
+      min-height: 50px;
+      &:hover{
+          background-color: get-color(primary);
+          color: #ffff;
+      }
+    }
+  }
+  

@@ -1,0 +1,23 @@
+#product_listing {
+  .dynamic-form {
+  }
+  #categories_wrapper {
+    width: 410px;
+    .select-selected {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    .select-arrow {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+}
+
+.listing_pagination {
+  a {
+    &:hover {
+      color: get-color(primary);
+    }
+  }
+}

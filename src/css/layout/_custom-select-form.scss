@@ -1,0 +1,70 @@
+.dynamic-form {
+    $light-color: get-color(light);;
+    $color_1: get-color(dark);
+    $background-color_1: #fff;
+    $background-color_2: $light-color;
+    $border-color_1: #fff transparent transparent transparent;
+    $border-color_2: transparent transparent #fff transparent;
+    .custom-select {
+      position: relative;
+    }
+    .custom-select {
+      select {
+        display: none;
+      }
+    }
+    .select-selected {
+      min-height: 50px;
+      background-color: $background-color_1;
+      color: $color_1;
+      padding: 16px 50px 16px 16px;
+      border: 1px solid $light-color;
+      cursor: pointer;
+      position: relative;
+      user-select: none;
+      .select-arrow{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50px;
+        aspect-ratio: 1;
+        background-color: $color_1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+          width: 10px;
+          height: 14px;
+          fill: #fff;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    .select-items {
+      border: 1px solid $light-color;
+      div {
+        color: $color_1;
+        padding: 8px 16px;
+        cursor: pointer;
+        border: none;
+        padding: 16px;
+        &:hover {
+          background-color: $background-color_2;
+        }
+      }
+      position: absolute;
+      background-color: $background-color_1;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      z-index: 99;
+    }
+    .select-hide {
+      display: none;
+    }
+    .same-as-selected {
+      background-color: $background-color_2;
+    }
+  }
+  

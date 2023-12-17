@@ -1,0 +1,40 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  &.show{
+    overflow: hidden;
+  }
+}
+html{
+  &.show{
+    overflow: hidden;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+:root{
+  @each $key, $color in $color-map{
+    --color-#{$key}: #{$color};
+  }
+
+  --green-cat-bg: #D2DED3;
+  --green-cat-text: #849B86;
+  --cream-cat-bg: #F7E7D7;
+  --cream-cat-text: #D4AE89;
+  --blue-cat-bg: #DDE8EE;
+  --blue-cat-text: #A6C6D8;
+  --brown-cat-bg: #E2DBD3;
+  --brown-cat-text: #BCAD9B;  
+
+}

@@ -1,0 +1,80 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:meta';
+
+@import 'normalizer';
+@import 'variables';
+@import 'initials';
+@import 'functions';
+@import 'mixins';
+
+@include generate_mixins();
+
+@each $key, $val in $grid-breakpoints {
+  $key: if($val == 0, '', $key + '-');
+  @if $val != 0 {
+    @media screen and (min-width: #{$val}) {
+      @include generate_cols($key);
+    }
+  } @else {
+    @include generate_cols($key);
+  }
+}
+
+
+@each $key, $val in if($is-mobile-first==true, $grid-breakpoints, reverseBreakPoints($grid-breakpoints)){
+  @media screen and (#{if($is-mobile-first==true, 'min-width', 'max-width')}: #{$val}){
+    @include generate_mixins($key);
+  }
+}
+
+// Colors start
+@each $color_code, $color_value in $color_map {
+  .text-#{$color_code} {
+    color: var(--color-#{$color_code});
+  }
+  .bg-#{$color_code} {
+    background-color: var(--color-#{$color_code});
+  }
+  .border-#{$color_code} {
+    border-color: var(--color-#{$color_code});
+  }
+  .fill-#{$color_code} {
+    fill: var(--color-#{$color_code});
+  }
+}
+
+// Container Generator
+@each $key, $val in $container-max-widths {
+  .container-#{$key} {
+    @extend .container-fluid;
+  }
+  @include generate_container_up($key) {
+    $container-width: map.get($container-max-widths, $key);
+    $gutter-total: (($number-of-col - 1) * $grid-gutter);
+    $col-width: math.div($container-width, $number-of-col);
+    :root {
+      --column-width: #{$col-width};
+      --gutter-total: #{$gutter-total};
+      --container-width: #{$container-width};
+      --container-margin: calc((100vw - #{$container-width}) / 2);
+      --gutter-width: #{$grid-gutter};
+    }
+
+    %get-container-#{$key} {
+      max-width: $val;
+    }
+    $extend-container: true;
+    @each $break-key, $break-val in $grid-breakpoints {
+      @if ($extend-container) {
+        .container#{breakpoint-infix($break-key, $grid-breakpoints)} {
+          @extend %get-container-#{$key};
+        }
+        @if ($key == $break-key) {
+          $extend-container: false;
+        }
+      }
+    }
+  }
+}

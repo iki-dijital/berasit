@@ -1,0 +1,21 @@
+#home_categories {
+  $class_list: ('green', 'cream', 'blue', 'brown');
+  a {
+    aspect-ratio: 306/600;
+  }
+  span {
+    min-height: 120px;
+  }
+  @each $color_name in $class_list {
+    .#{$color_name}_category {
+      background-color: var(--#{$color_name}-cat-bg);
+      color: var(--#{$color_name}-cat-text);
+      &:hover {
+        background-color: var(--#{$color_name}-cat-text);
+        span {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

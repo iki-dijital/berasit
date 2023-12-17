@@ -1,0 +1,39 @@
+#page_banner {
+  nav {
+    a {
+      &:hover {
+        color: #fff;
+      }
+      &:not(:last-child) {
+        &::after {
+          content: '>';
+          position: absolute;
+          color: get-color(light);
+          line-height: 1;
+          top: 50%;
+          left: 100%;
+          width: 20px;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+  .banner_ribbon {
+    background-color: get-color(primary);
+  }
+  .before_ribbon {
+    background-color: get-color(primary);
+    width: var(--column-width);
+  }
+  .after_ribbon {
+    background-color: get-color(primary);
+    width: calc(var(--container-margin) + 4px);
+  }
+  h1{
+    background-color: get-color(primary);
+  }
+}

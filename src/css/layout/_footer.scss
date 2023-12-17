@@ -1,0 +1,44 @@
+footer {
+  &::before {
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc(
+      var(--container-margin) + (10 * var(--column-width)) -
+        (var(--gutter-width) / 2)
+    );
+    background-color: get-color(dark);
+  }
+  .pagelist {
+    a {
+      &::before {
+        top: 11px;
+        left: -15px;
+        width: 5px;
+        transition: 0.3s opacity, 0.3s left;
+        height: 8px;
+        opacity: 0;
+        @include mask-parameters(
+          $image: '../img/svg/triangle_marker.svg'
+        );
+        background-color: #fff;
+      }
+      &:hover {
+        color: #fff;
+        &::before {
+          left: -12px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .social {
+    a {
+      &:hover {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

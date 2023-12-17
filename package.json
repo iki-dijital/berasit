@@ -1,0 +1,66 @@
+{
+  "name": "mufferplate",
+  "description": "Personal template for projects",
+  "version": "1.0.0",
+  "author": "Furkan Taşkın",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "blaze-slider": "^1.9.3",
+    "bootstrap": "5.3.2",
+    "glightbox": "^3.2.0",
+    "photoswipe": "^5.4.2",
+    "swiper": "^11.0.4"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "cssnano": "^6.0.1",
+    "cssnano-preset-advanced": "^6.0.1",
+    "lightningcss-cli": "^1.22.1",
+    "masonry-layout": "^4.2.2",
+    "mufferplate": "^0.19.2",
+    "pers-sign": "^0.5.0",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "postcss-sort-media-queries": "^5.2.0",
+    "sass": "^1.69.5"
+  },
+  "scripts": {
+    "dev-js": "mufferplate dev",
+    "dev-css": "sass --color --watch --embed-source-map src/css/main.scss:theme/assets/css/main.css --load-path=src/css",
+    "build-js": "mufferplate build",
+    "build-css": "sass --no-source-map --style=compressed src/css/main.scss:theme/assets/css/main.css",
+    "build": "npm run build-js && npm run build-css",
+    "dev": "concurrently -c \"bgYellow.bold,bgMagenta.bold\" --kill-others npm:dev-*",
+    "postcss": "postcss --no-map --verbose theme/assets/css/*.css --dir theme/assets/css --config postcss.config.js",
+    "lightningcss": "lightningcss --minify --bundle --browserslist ./theme/assets/css/main.css -o ./theme/assets/css/main.css",
+    "bundle": "npm run build && node bundlephp.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furkantaskin/mufferplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/furkantaskin/mufferplate/issues"
+  },
+  "homepage": "https://github.com/furkantaskin/mufferplate#readme",
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "printWidth": 70
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "Chrome >= 100",
+    "Firefox >= 100",
+    "iOS >= 15",
+    "Safari >= 15"
+  ]
+}

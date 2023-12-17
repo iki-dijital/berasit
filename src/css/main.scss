@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@use 'sass:string';
+@use 'sass:list';
+
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+/*! purgecss start ignore */
+@import 'vendors/bootstrap';
+@import 'vendors/swiper';
+@import 'vendors/glightbox';
+/*! purgecss end ignore */
+
+@import 'custom_utilities/generator';
+
+@import 'base/typography';
+@import 'base/base';
+@import 'base/utilities';
+@import 'base/animations';
+@import 'base/mobile';
+
+/*! purgecss start ignore */
+@import 'layout/fade-slide';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/categories-section';
+@import 'layout/blog-card';
+@import 'layout/page-banner';
+@import 'layout/custom-select-form';
+@import 'layout/prod-card';
+/*! purgecss end ignore */
+
+@import 'components/buttons';
+
+@import 'pages/index';
+@import 'pages/product-listing';
+@import 'pages/product-detail';
+@import 'pages/projects';
+@import 'pages/project-detail';
+@import 'pages/catalogue';
+@import 'pages/page-content';
+@import 'pages/contact';

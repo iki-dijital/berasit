@@ -1,0 +1,38 @@
+.header_blog {
+  &:hover {
+    color: get-color(primary);
+  }
+}
+
+.header_langs {
+  a {
+    &:hover,
+    &.active {
+      color: get-color(primary);
+    }
+    &::before {
+      left: -12px;
+      top: 0;
+      height: 100%;
+      border: 1px solid #707070;
+    }
+  }
+}
+#main-nav {
+  a {
+    &::after {
+      bottom: 0;
+      left: -15px;
+      right: -15px;
+      height: 4px;
+      opacity: 0;
+      background-color: get-color(primary);
+      transition: 0.3s opacity;
+    }
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
