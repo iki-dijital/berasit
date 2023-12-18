@@ -32,7 +32,7 @@ include "header.php";
                                 </div>
                                 <div class="col-lg-8">
                                     <img src="<?= domain ?>assets/img/delete_slide_<?= $i % 4 + 1 ?>.webp"
-                                        alt="Slide başlık">
+                                        alt="Slide başlık" fetchpriority="high">
                                 </div>
                             </div>
                         </div>
