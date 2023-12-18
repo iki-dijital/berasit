@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="banner_ribbon w-fit ml-auto py-4.5 relative transition-colors transition-300"
-                        data-bg="#849B86">
+                        data-bg="#D4AE89">
                         <div class="before_ribbon absolute top-0 right-full h-full transition-colors transition-300">
                         </div>
                         <h1 class="text-xl text-light w-fit ml-auto text-right my-0 transition-colors transition-300">
@@ -99,19 +99,19 @@
                 <ul class="nav nav-tabs" id="prod-desc-tab" role="tablist">
                     <li class="nav-item apply_dark" role="presentation">
                         <button
-                            class="nav-link parent-nav-link cursor-pointer text-white leading-none py-4 px-5 w-full transition-colors transition-300 active"
+                            class="nav-link parent-nav-link cursor-pointer text-white text-left leading-none py-4 px-5 w-full transition-colors transition-300 active"
                             id="prod-tab-1" data-bs-toggle="tab" data-bs-target="#prod-1-pane" type="button" role="tab"
                             aria-controls="prod-1-pane" aria-selected="true">Ürün Özellikleri</button>
                     </li>
                     <li class="nav-item apply_dark" role="presentation">
                         <button
-                            class="nav-link parent-nav-link cursor-pointer text-white leading-none py-4 px-5 w-full transition-colors transition-300"
+                            class="nav-link parent-nav-link cursor-pointer text-white text-left leading-none py-4 px-5 w-full transition-colors transition-300"
                             id="prod-tab-2" data-bs-toggle="tab" data-bs-target="#prod-2-pane" type="button" role="tab"
                             aria-controls="prod-2-pane" aria-selected="false">Ürün Boyutları</button>
                     </li>
                     <li class="nav-item apply_dark" role="presentation">
                         <button
-                            class="nav-link parent-nav-link cursor-pointer text-white leading-none py-4 px-5 w-full transition-colors transition-300"
+                            class="nav-link parent-nav-link cursor-pointer text-white text-left leading-none py-4 px-5 w-full transition-colors transition-300"
                             id="prod-tab-3" data-bs-toggle="tab" data-bs-target="#prod-3-pane" type="button" role="tab"
                             aria-controls="prod-3-pane" aria-selected="false">Ürün Renkleri</button>
                     </li>
@@ -121,57 +121,77 @@
         <div class="product_tab_content">
             <div class="container">
                 <div class="tab-content mb-25" id="prod-desc-content">
-                    <div class="tab-pane fade py-6 show active" id="prod-1-pane" role="tabpanel"
+                    <div class="tab-pane fade py-7.5 px-5 show active" id="prod-1-pane" role="tabpanel"
                         aria-labelledby="prod-tab-1" tabindex="0">
+                        <?php for ($i = 1; $i <= 15; $i++): ?>
+                            <div class="flex items-center py-1.5">
+                                <span class="font-semibold flex-none w-2/12">Lorem Ipsom</span>
+                                <p class="flex-1 pl-6 my-0">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry.</p>
+                            </div>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="tab-pane fade py-4 px-3" id="prod-2-pane" role="tabpanel" aria-labelledby="prod-tab-2"
+                        tabindex="0">
                         <table>
                             <tbody>
                                 <tr>
-                                    <th>Lorem Ipsom</th>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                                    <td>2 Kişilik Koltuk</td>
+                                    <td>H 75 cm</td>
+                                    <td>W 155 cm - 90 cm</td>
                                 </tr>
                                 <tr>
-                                    <th>Lorem Ipsom</th>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                                    <th>Tek Kişilik Koltuk</th>
+                                    <td><strong>H</strong> 75 cm</td>
+                                    <td><b>W</b> 155 cm - 90 cm</td>
                                 </tr>
                                 <tr>
-                                    <th>Lorem Ipsom</th>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                                    <td>2 Kişilik Koltuk</td>
+                                    <td>H 75 cm</td>
+                                    <td>W 155 cm - 90 cm</td>
                                 </tr>
                                 <tr>
-                                    <th>Lorem Ipsom</th>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                </tr>
-                                <tr>
-                                    <th>Lorem Ipsom</th>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                </tr>
-                                <tr>
-                                    <th>Lorem Ipsom</th>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                </tr>
-                                <tr>
-                                    <td>Lorem Ipsom</td>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                </tr>
-                                <tr>
-                                    <td>Lorem Ipsom</td>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                </tr>
-                                <tr>
-                                    <td>Lorem Ipsom</td>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
-                                </tr>
-                                <tr>
-                                    <td>Lorem Ipsom</td>
-                                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                                    <th>Tek Kişilik Koltuk ve Uzunca bir yazı ile burayı değiştiriyorum</th>
+                                    <td><strong>H</strong> 75 cm</td>
+                                    <td><b>W</b> 155 cm - 90 cm</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="tab-pane fade py-6" id="prod-2-pane" role="tabpanel" aria-labelledby="prod-tab-2"
-                        tabindex="0">2</div>
-                    <div class="tab-pane fade py-6" id="prod-3-pane" role="tabpanel" aria-labelledby="prod-tab-3"
-                        tabindex="0">3</div>
+                    <!-- CSS id'ye bağlı. Değiştireceksen CSS'i de güncelle -->
+                    <div class="tab-pane fade py-7.5 px-5" id="prod-3-pane" role="tabpanel" aria-labelledby="prod-tab-3"
+                        tabindex="0">
+                        <ul class="nav nav-tabs flex-col flex-none w-2/12" id="prod-color-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button
+                                    class="nav-link leading-none py-1 pl-5.5 relative before-absolute cursor-pointer active"
+                                    id="color-1-tab" data-bs-toggle="tab" data-bs-target="#color-1-pane" type="button"
+                                    role="tab" aria-controls="color-1-pane" aria-selected="true">Minder Rengi</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button
+                                    class="nav-link leading-none py-1 pl-5.5 relative before-absolute cursor-pointer"
+                                    id="color-2-tab" data-bs-toggle="tab" data-bs-target="#color-2-pane" type="button"
+                                    role="tab" aria-controls="color-2-pane" aria-selected="false">Metal Rengi</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content flex-none w-7/12" id="prod-colors-content">
+                            <div class="tab-pane fade flex-wrap items-start content-start gap-6 show active" id="color-1-pane" role="tabpanel"
+                                aria-labelledby="color-1-tab" tabindex="0">
+                                <?php for ($i = 1; $i <= 12; $i++): ?>
+                                    <img src="<?= domain ?>assets/img/delete_color_<?= $i ?>.webp" alt="Renk adı" width="86"
+                                        height="86" class="block aspect-square object-cover object-center" loading="lazy">
+                                <?php endfor; ?>
+                            </div>
+                            <div class="tab-pane fade flex-wrap items-start content-start gap-6" id="color-2-pane" role="tabpanel" aria-labelledby="color-2-tab"
+                                tabindex="0">
+                                <?php for ($i = 1; $i <= 12; $i++): ?>
+                                    <img src="<?= domain ?>assets/img/delete_color_<?= rand(1,100) % 12 + 1?>.webp" alt="Renk adı" width="86"
+                                        height="86" class="block aspect-square object-cover object-center" loading="lazy">
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ import Swiper from 'swiper';
 import { Autoplay, Thumbs, Navigation } from 'swiper/modules';
 import Masonry from 'masonry-layout';
 import GLightbox from 'glightbox';
+import Tab from 'bootstrap/js/dist/tab';
 
 /* ------ Global ------ */
 function isHex(getColorValue) {
@@ -158,6 +159,32 @@ otherProductsSwiper &&
       nextEl: '.other_products .next',
     },
   });
+
+const prodDescriptionTab = document.getElementById('prod-desc-tab');
+const prodColorTab = document.getElementById('prod-color-tab');
+
+prodDescriptionTab &&
+  prodDescriptionTab
+    .querySelectorAll('.parent-nav-link')
+    .forEach((triggerEl) => {
+      const tabTrigger = new Tab(triggerEl);
+
+      triggerEl.addEventListener('click', (event) => {
+        event.preventDefault();
+        tabTrigger.show();
+      });
+    });
+
+prodColorTab && prodColorTab
+.querySelectorAll('.nav-link')
+.forEach((triggerEl) => {
+  const tabTrigger = new Tab(triggerEl);
+
+  triggerEl.addEventListener('click', (event) => {
+    event.preventDefault();
+    tabTrigger.show();
+  });
+});
 
 /* ------ End Ürün Detay ------ */
 /* ------ Proje Detay ------ */

@@ -31,7 +31,9 @@
 
 #prod-desc-tab {
   li {
-    min-width: calc(var(--column-width) * 3);
+    min-width: calc(
+      (var(--column-width) * 3) - (var(--gutter-width) / 2)
+    );
     .nav-link {
       &:not(.active) {
         &:hover {
@@ -46,20 +48,67 @@
 }
 
 #prod-desc-content {
+  .tab-pane {
+    min-height: 410px;
+  }
   table {
-    width: 100%;
-    tr {
-      * {
-        text-align: left;
-        padding: 6px 0;
-        &:first-child {
-          font-weight: 600;
-          width: math.percentage(to-fixed(math.div(2, 12)));
-        }
-        &:last-child {
-          width: math.percentage(to-fixed(math.div(10, 12)));
-        }
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    min-width: 50%;
+  }
+  tr {
+    th,
+    td {
+      text-align: left;
+      padding: 16px 8px;
+      border-top: 1px solid get-color(light);
+      border-bottom: 1px solid get-color(light);
+      &:first-child {
+        border-left: 1px solid get-color(light);
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        font-weight: 600;
       }
+      &:last-child {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        border-right: 1px solid get-color(light);
+      }
+    }
+    strong,
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
+#prod-3-pane {
+  &.active {
+    display: flex;
+    gap: 24px;
+  }
+  .nav-link {
+    transition: none;
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 12px;
+      height: 3px;
+      background-color: get-color(primary);
+      opacity: 0;
+    }
+    &.active {
+      color: get-color(primary);
+      font-weight: 700;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  .tab-pane {
+    &.active {
+      display: flex;
     }
   }
 }
@@ -76,19 +125,19 @@
   }
 }
 
-.other_products{
-  .title_wrapper{
+.other_products {
+  .title_wrapper {
     border-bottom: 1px solid get-color(dark);
   }
-  .other_nav{
-    svg{
-      &:hover{
+  .other_nav {
+    svg {
+      &:hover {
         fill: get-color(primary);
       }
     }
   }
-  .next{
-    svg{
+  .next {
+    svg {
       transform: rotate(180deg);
     }
   }
